@@ -36,26 +36,38 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="124.5" height="124.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="buttonImgPicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JZP-pQ-wZT"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdM-HT-eab" userLabel="Button2">
                                                         <rect key="frame" x="141.5" y="0.0" width="124.5" height="124.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="buttonImgPicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Jf-ps-HYg"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="6et-BE-GPx" userLabel="Stack View2">
                                                 <rect key="frame" x="0.0" y="141.5" width="266" height="124.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk0-le-WSE" userLabel="Button4">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oj-8i-GXB" userLabel="Button3">
                                                         <rect key="frame" x="0.0" y="0.0" width="266" height="124.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="buttonImgPicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="thd-Xp-h3L"/>
+                                                        </connections>
                                                     </button>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oj-8i-GXB" userLabel="Button3">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk0-le-WSE" userLabel="Button4">
                                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="124.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="buttonImgPicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dhz-To-0j5"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -218,18 +230,10 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="ArrowUpSwipe" destination="ACJ-Xm-Suz" id="dlO-RL-KPl"/>
-                        <outlet property="arrowUp" destination="ACJ-Xm-Suz" id="TeS-qS-tuV"/>
                         <outlet property="bigGridSquare" destination="qtK-aY-IlK" id="8Az-wR-tFX"/>
                         <outlet property="buttonTemplate1" destination="3iS-CG-rpX" id="cru-e3-qGO"/>
                         <outlet property="buttonTemplate2" destination="s4y-lj-rnH" id="aPe-YY-C45"/>
                         <outlet property="buttonTemplate3" destination="Imi-lj-TPR" id="yOa-0S-Pm7"/>
-                        <outlet property="textSwipeUp" destination="xEg-9l-c5w" id="V8n-Hw-RW4"/>
-                        <outlet property="title" destination="74K-Zd-Xyu" id="A2f-K0-RKC"/>
-                        <outletCollection property="buttonsPhoto" destination="eEE-Ae-mXp" collectionClass="NSMutableArray" id="bPp-d9-NLJ"/>
-                        <outletCollection property="buttonsPhoto" destination="TdM-HT-eab" collectionClass="NSMutableArray" id="NQv-pe-19Y"/>
-                        <outletCollection property="buttonsPhoto" destination="1Oj-8i-GXB" collectionClass="NSMutableArray" id="40L-MG-uWc"/>
-                        <outletCollection property="buttonsPhoto" destination="uk0-le-WSE" collectionClass="NSMutableArray" id="1Hh-10-TVC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

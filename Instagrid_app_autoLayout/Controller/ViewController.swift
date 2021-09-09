@@ -7,27 +7,43 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     //elements of the view
-    @IBOutlet weak var arrowUpSwipe: UIImageView!
     @IBOutlet weak var bigGridSquare: UIView!
-    @IBOutlet weak var titleApp: UILabel!
-    @IBOutlet weak var arrowUp: UIImageView!
-    @IBOutlet weak var textSwipeUp: UILabel!
     @IBOutlet weak var buttonTemplate1: UIButton!
     @IBOutlet weak var buttonTemplate2: UIButton!
     @IBOutlet weak var buttonTemplate3: UIButton!
-    @IBOutlet var buttonsPhoto: [UIButton]!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
+    
+    private var sender: UIButton!
+    
+    //open the Image picker
+    @IBAction func buttonImgPicker(_ sender: UIButton) {
+        self.sender = sender
+        openImagePicker()
+    }
+    
+    //import the image
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else { return }
+        sender.setImage(image, for: .normal)
+        dismiss(animated: true)
+    }
+    
+    private func openImagePicker() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present (picker, animated: true)
+    }
+    
 
     @IBAction func makeTemplate1(_ sender: UIButton) {
+        //set image
     }
     @IBAction func makeTemplate2(_ sender: UIButton) {
     }

@@ -63,7 +63,6 @@
 				8E3D48DA26D92A67008270B0 /* LaunchScreen.storyboard */,
 				8E3D48E326D92DF4008270B0 /* Delm-Medium.otf */,
 				8E3D48E426D92DF4008270B0 /* ThirstySoftRegular.otf */,
-				8E3D48DD26D92A67008270B0 /* Info.plist */,
 				8E3D48CF26D92A67008270B0 /* AppDelegate.swift */,
 				8E3D48D126D92A67008270B0 /* SceneDelegate.swift */,
 				8E3D48D826D92A67008270B0 /* Assets.xcassets */,
@@ -90,6 +89,7 @@
 		8E3D48CE26D92A67008270B0 /* Instagrid_app_autoLayout */ = {
 			isa = PBXGroup;
 			children = (
+				8E3D48DD26D92A67008270B0 /* Info.plist */,
 				8E02DD2426E7A53500E3302F /* Controller */,
 				8E02DD2526E7A54C00E3302F /* View */,
 				8E02DD2626E7A5AE00E3302F /* Supporting files */,
