@@ -32,12 +32,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hxb-sw-VOk" userLabel="Stack View1">
                                                 <rect key="frame" x="0.0" y="0.0" width="266" height="124.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEE-Ae-mXp">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEE-Ae-mXp" userLabel="Button1">
                                                         <rect key="frame" x="0.0" y="0.0" width="124.5" height="124.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdM-HT-eab">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdM-HT-eab" userLabel="Button2">
                                                         <rect key="frame" x="141.5" y="0.0" width="124.5" height="124.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
@@ -47,12 +47,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="6et-BE-GPx" userLabel="Stack View2">
                                                 <rect key="frame" x="0.0" y="141.5" width="266" height="124.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk0-le-WSE">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk0-le-WSE" userLabel="Button4">
                                                         <rect key="frame" x="0.0" y="0.0" width="266" height="124.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
                                                     </button>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oj-8i-GXB">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Oj-8i-GXB" userLabel="Button3">
                                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="124.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
@@ -99,13 +99,13 @@
                                 </variation>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="ACJ-Xm-Suz">
-                                <rect key="frame" x="202.5" y="221" width="9.5" height="13"/>
+                                <rect key="frame" x="197.5" y="208" width="19" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="13.1" id="6ij-ci-MP1">
-                                        <variation key="widthClass=regular" constant="9.5"/>
+                                    <constraint firstAttribute="height" constant="26" id="6ij-ci-MP1">
+                                        <variation key="widthClass=regular" constant="19"/>
                                     </constraint>
-                                    <constraint firstAttribute="width" constant="9.5" id="U8C-gV-xSh">
-                                        <variation key="widthClass=regular" constant="13.1"/>
+                                    <constraint firstAttribute="width" constant="19" id="U8C-gV-xSh">
+                                        <variation key="widthClass=regular" constant="26"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="widthClass=regular" image="Arrow Left"/>
@@ -119,17 +119,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NcO-ys-Vi2">
                                 <rect key="frame" x="70" y="668" width="274" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iS-CG-rpX">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iS-CG-rpX" userLabel="ButtonT1">
                                         <rect key="frame" x="0.0" y="0.0" width="81.5" height="80"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
+                                        <connections>
+                                            <action selector="makeTemplate1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kxl-Sv-NaG"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4y-lj-rnH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4y-lj-rnH" userLabel="ButtonT2">
                                         <rect key="frame" x="96.5" y="0.0" width="81" height="80"/>
                                         <state key="normal" image="Selected" backgroundImage="Layout 2"/>
+                                        <connections>
+                                            <action selector="makeTemplate2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Qj-Oc-qvx"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imi-lj-TPR">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imi-lj-TPR" userLabel="ButtonT3">
                                         <rect key="frame" x="192.5" y="0.0" width="81.5" height="80"/>
                                         <state key="normal" backgroundImage="Layout 3"/>
+                                        <connections>
+                                            <action selector="makeTemplate3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIM-Bj-lEM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -208,6 +217,20 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="ArrowUpSwipe" destination="ACJ-Xm-Suz" id="dlO-RL-KPl"/>
+                        <outlet property="arrowUp" destination="ACJ-Xm-Suz" id="TeS-qS-tuV"/>
+                        <outlet property="bigGridSquare" destination="qtK-aY-IlK" id="8Az-wR-tFX"/>
+                        <outlet property="buttonTemplate1" destination="3iS-CG-rpX" id="cru-e3-qGO"/>
+                        <outlet property="buttonTemplate2" destination="s4y-lj-rnH" id="aPe-YY-C45"/>
+                        <outlet property="buttonTemplate3" destination="Imi-lj-TPR" id="yOa-0S-Pm7"/>
+                        <outlet property="textSwipeUp" destination="xEg-9l-c5w" id="V8n-Hw-RW4"/>
+                        <outlet property="title" destination="74K-Zd-Xyu" id="A2f-K0-RKC"/>
+                        <outletCollection property="buttonsPhoto" destination="eEE-Ae-mXp" collectionClass="NSMutableArray" id="bPp-d9-NLJ"/>
+                        <outletCollection property="buttonsPhoto" destination="TdM-HT-eab" collectionClass="NSMutableArray" id="NQv-pe-19Y"/>
+                        <outletCollection property="buttonsPhoto" destination="1Oj-8i-GXB" collectionClass="NSMutableArray" id="40L-MG-uWc"/>
+                        <outletCollection property="buttonsPhoto" destination="uk0-le-WSE" collectionClass="NSMutableArray" id="1Hh-10-TVC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
