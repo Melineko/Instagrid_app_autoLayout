@@ -231,6 +231,8 @@
                     </view>
                     <connections>
                         <outlet property="bigGridSquare" destination="qtK-aY-IlK" id="8Az-wR-tFX"/>
+                        <outlet property="button2" destination="TdM-HT-eab" id="qbN-UO-v0o"/>
+                        <outlet property="button4" destination="uk0-le-WSE" id="Un8-v4-rjz"/>
                         <outlet property="buttonTemplate1" destination="3iS-CG-rpX" id="cru-e3-qGO"/>
                         <outlet property="buttonTemplate2" destination="s4y-lj-rnH" id="aPe-YY-C45"/>
                         <outlet property="buttonTemplate3" destination="Imi-lj-TPR" id="yOa-0S-Pm7"/>

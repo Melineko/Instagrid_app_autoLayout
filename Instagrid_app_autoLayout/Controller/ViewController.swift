@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     @IBOutlet weak var buttonTemplate1: UIButton!
     @IBOutlet weak var buttonTemplate2: UIButton!
     @IBOutlet weak var buttonTemplate3: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button4: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +43,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         present (picker, animated: true)
     }
     
+    func resetTemplateButtons(){
+        buttonTemplate1.isSelected = false
+        buttonTemplate2.isSelected = true
+        buttonTemplate3.isSelected = false
+    }
+    
 
     @IBAction func makeTemplate1(_ sender: UIButton) {
-        //set image
+        sender.isSelected = true
+        button2.isHidden = true
+        button4.isHidden = false
     }
     @IBAction func makeTemplate2(_ sender: UIButton) {
+        sender.isSelected = true
+        button2.isHidden = false
+        button4.isHidden = true
     }
     @IBAction func makeTemplate3(_ sender: UIButton) {
+        sender.isSelected = true
+        button2.isHidden = false
+        button4.isHidden = false
     }
     
 }
