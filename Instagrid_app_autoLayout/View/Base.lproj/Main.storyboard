@@ -131,23 +131,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NcO-ys-Vi2">
                                 <rect key="frame" x="70" y="668" width="274" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iS-CG-rpX" userLabel="ButtonT1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iS-CG-rpX" userLabel="ButtonT1">
                                         <rect key="frame" x="0.0" y="0.0" width="81.5" height="80"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
+                                        <state key="selected" image="Selected" backgroundImage="Layout 1"/>
                                         <connections>
                                             <action selector="makeTemplate1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kxl-Sv-NaG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4y-lj-rnH" userLabel="ButtonT2">
                                         <rect key="frame" x="96.5" y="0.0" width="81" height="80"/>
-                                        <state key="normal" image="Selected" backgroundImage="Layout 2"/>
+                                        <state key="normal" backgroundImage="Layout 2"/>
+                                        <state key="selected" image="Selected" backgroundImage="Layout 2"/>
                                         <connections>
                                             <action selector="makeTemplate2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Qj-Oc-qvx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imi-lj-TPR" userLabel="ButtonT3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imi-lj-TPR" userLabel="ButtonT3">
                                         <rect key="frame" x="192.5" y="0.0" width="81.5" height="80"/>
                                         <state key="normal" backgroundImage="Layout 3"/>
+                                        <state key="selected" image="Selected" backgroundImage="Layout 3"/>
                                         <connections>
                                             <action selector="makeTemplate3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIM-Bj-lEM"/>
                                         </connections>

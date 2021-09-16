@@ -19,9 +19,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonTemplate2.isSelected = true
     }
     
     private var sender: UIButton!
+
     
     //open the Image picker
     @IBAction func buttonImgPicker(_ sender: UIButton) {
@@ -45,26 +47,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     func resetTemplateButtons(){
         buttonTemplate1.isSelected = false
-        buttonTemplate2.isSelected = true
+        buttonTemplate2.isSelected = false
         buttonTemplate3.isSelected = false
     }
     
 
     @IBAction func makeTemplate1(_ sender: UIButton) {
+        resetTemplateButtons()
         sender.isSelected = true
         button2.isHidden = true
         button4.isHidden = false
     }
     @IBAction func makeTemplate2(_ sender: UIButton) {
+        resetTemplateButtons()
         sender.isSelected = true
         button2.isHidden = false
         button4.isHidden = true
     }
     @IBAction func makeTemplate3(_ sender: UIButton) {
+        resetTemplateButtons()
         sender.isSelected = true
         button2.isHidden = false
         button4.isHidden = false
     }
+    
     
 }
 
