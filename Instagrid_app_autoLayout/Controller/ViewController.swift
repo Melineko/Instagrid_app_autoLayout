@@ -134,12 +134,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         }
     }
     
+    // annim and export picture
     @objc func sharePicture(_ sender: UISwipeGestureRecognizer){
+        if isImageEmpty() {
+            showNotifAlert()
+        }else{
          //animateSwipe()
          //renderPicture()
         print("L'action est faite")
+        }
     }
     
+    // Pop up alert if image is empty
     func showNotifAlert() {
         let alert = UIAlertController(title: "Oups", message: "You can't export an empty canvas. Please pick a photo.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {action in
