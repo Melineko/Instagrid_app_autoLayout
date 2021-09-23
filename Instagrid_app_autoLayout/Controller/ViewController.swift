@@ -115,6 +115,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
             }
         }
     
+    // Animation of Swipe with orientation constrains
+        func animateSwipe() {
+            if UIDevice.current.orientation.isLandscape {
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.bigGridSquare.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
+                })
+            } else {
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.bigGridSquare.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
+                })
+            }
+        }
+    
     @objc func sharePicture(_ sender: UISwipeGestureRecognizer){
         print("L'action est faite")
     }
