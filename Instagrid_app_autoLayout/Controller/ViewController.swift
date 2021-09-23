@@ -26,6 +26,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         buttonTemplate2.isSelected = true
         // Make view recognizing gesture
         bigGridSquare.addGestureRecognizer(swipeGesture)
+        bigGridSquare.isUserInteractionEnabled = true
     }
     
     // Initialisation of swipeGesture
@@ -61,9 +62,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         buttonTemplate3.isSelected = false
     }
     
-    func sendAction() {
+    // Check if the image contents something
+    func isImageEmpty() -> Bool {
         if sender.image(for: .normal) == UIImage(named:"Plus") {
-           print("L'image est PLUS")
+           return true
+        } else {
+            return false
         }
     }
     
