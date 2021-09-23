@@ -62,14 +62,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         buttonTemplate3.isSelected = false
     }
     
-    // Check if the image contents something
-    func isImageEmpty() -> Bool {
-        if sender.image(for: .normal) == UIImage(named:"Plus") {
-           return true
-        } else {
-            return false
-        }
-    }
     
 
     @IBAction func makeTemplate(_ sender: UIButton) {
@@ -133,10 +125,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
             }
         }
     
+    // Check if the image contents something
+    func isImageEmpty() -> Bool {
+        if sender.image(for: .normal) == UIImage(named:"Plus") {
+           return true
+        } else {
+            return false
+        }
+    }
+    
     @objc func sharePicture(_ sender: UISwipeGestureRecognizer){
          //animateSwipe()
          //renderPicture()
         print("L'action est faite")
+    }
+    
+    func showNotifAlert() {
+        let alert = UIAlertController(title: "Oups", message: "You can't export an empty canvas. Please pick a photo.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {action in
+            print("tapped OK")
+        }))
     }
     
 }
