@@ -27,6 +27,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         // Make view recognizing gesture
         bigGridSquare.addGestureRecognizer(swipeGesture)
     }
+    
     // Initialisation of swipeGesture
     let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(sharePicture(_:)))
     private var sender: UIButton!
@@ -100,7 +101,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
     
     // Render image
-        func createPicture() {
+        func renderPicture() {
             let render = UIGraphicsImageRenderer(size: bigGridSquare.bounds.size)
             let renderingImage = render.image {
                 (ctx) in
@@ -129,6 +130,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         }
     
     @objc func sharePicture(_ sender: UISwipeGestureRecognizer){
+         //animateSwipe()
+         //renderPicture()
         print("L'action est faite")
     }
     
