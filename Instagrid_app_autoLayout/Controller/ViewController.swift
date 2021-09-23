@@ -99,6 +99,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         }
     }
     
+    // Render image
+        func createPicture() {
+            let render = UIGraphicsImageRenderer(size: bigGridSquare.bounds.size)
+            let renderingImage = render.image {
+                (ctx) in
+                bigGridSquare.drawHierarchy(in: bigGridSquare.bounds, afterScreenUpdates: true)
+            }
+            let activityController = UIActivityViewController (activityItems: [renderingImage], applicationActivities: nil)
+            present(activityController, animated: true)
+            activityController.completionWithItemsHandler = { _ , _ , _, _ in
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.bigGridSquare.transform = .identity
+                })
+            }
+        }
     
     @objc func sharePicture(_ sender: UISwipeGestureRecognizer){
         print("L'action est faite")
