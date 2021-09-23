@@ -131,28 +131,28 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NcO-ys-Vi2">
                                 <rect key="frame" x="70" y="668" width="274" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iS-CG-rpX" userLabel="ButtonT1">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iS-CG-rpX" userLabel="ButtonT1">
                                         <rect key="frame" x="0.0" y="0.0" width="81.5" height="80"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
                                         <state key="selected" image="Selected" backgroundImage="Layout 1"/>
                                         <connections>
-                                            <action selector="makeTemplate1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kxl-Sv-NaG"/>
+                                            <action selector="makeTemplate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fc8-eo-I1f"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4y-lj-rnH" userLabel="ButtonT2">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4y-lj-rnH" userLabel="ButtonT2">
                                         <rect key="frame" x="96.5" y="0.0" width="81" height="80"/>
                                         <state key="normal" backgroundImage="Layout 2"/>
                                         <state key="selected" image="Selected" backgroundImage="Layout 2"/>
                                         <connections>
-                                            <action selector="makeTemplate2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Qj-Oc-qvx"/>
+                                            <action selector="makeTemplate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CLC-8F-GiJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imi-lj-TPR" userLabel="ButtonT3">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imi-lj-TPR" userLabel="ButtonT3">
                                         <rect key="frame" x="192.5" y="0.0" width="81.5" height="80"/>
                                         <state key="normal" backgroundImage="Layout 3"/>
                                         <state key="selected" image="Selected" backgroundImage="Layout 3"/>
                                         <connections>
-                                            <action selector="makeTemplate3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIM-Bj-lEM"/>
+                                            <action selector="makeTemplate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rYq-sW-OF5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -234,11 +234,14 @@
                     </view>
                     <connections>
                         <outlet property="bigGridSquare" destination="qtK-aY-IlK" id="8Az-wR-tFX"/>
+                        <outlet property="button1" destination="eEE-Ae-mXp" id="cpA-f4-qCz"/>
                         <outlet property="button2" destination="TdM-HT-eab" id="qbN-UO-v0o"/>
+                        <outlet property="button3" destination="1Oj-8i-GXB" id="ZzL-1M-EbR"/>
                         <outlet property="button4" destination="uk0-le-WSE" id="Un8-v4-rjz"/>
                         <outlet property="buttonTemplate1" destination="3iS-CG-rpX" id="cru-e3-qGO"/>
                         <outlet property="buttonTemplate2" destination="s4y-lj-rnH" id="aPe-YY-C45"/>
                         <outlet property="buttonTemplate3" destination="Imi-lj-TPR" id="yOa-0S-Pm7"/>
+                        <outlet property="swipeText" destination="xEg-9l-c5w" id="u7h-b9-hMf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
