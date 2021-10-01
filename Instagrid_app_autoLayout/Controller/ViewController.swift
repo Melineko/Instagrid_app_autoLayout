@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-
+    
     //elements of the view
     @IBOutlet weak var bigGridSquare: UIView!
     @IBOutlet weak var buttonTemplate1: UIButton!
@@ -20,19 +20,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button3: UIButton!
     
+    // Initialisation of swipeGesture
+    private var sender: UIButton!
+    private var tappedButtonQty = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         buttonTemplate2.isSelected = true
         // Make view recognizing gesture
-        bigGridSquare.addGestureRecognizer(swipeGesture)
-        bigGridSquare.isUserInteractionEnabled = true
+        let swipeUP = UISwipeGestureRecognizer(target: self, action: #selector(sharePicture(_:)))
+        swipeUP.direction = .up
+        view.addGestureRecognizer(swipeUP)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(sharePicture(_:)))
+        swipeLeft.direction = .left
+        view.addGestureRecognizer(swipeLeft)
+        
     }
     
-    // Initialisation of swipeGesture
-    let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(sharePicture(_:)))
-    private var sender: UIButton!
-
+    
     
     //open the Image picker
     @IBAction func buttonImgPicker(_ sender: UIButton) {
@@ -46,6 +54,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         sender.setImage(image, for: .normal)
         button1.imageView?.contentMode = .scaleAspectFill
         button3.imageView?.contentMode = .scaleAspectFill
+        tappedButtonQty+=1
         dismiss(animated: true)
     }
     
@@ -63,7 +72,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
     
     
-
+    
     @IBAction func makeTemplate(_ sender: UIButton) {
         resetTemplateButtons()
         sender.isSelected = true
@@ -89,59 +98,72 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape {
             swipeText.text = "Swipe left to share"
-            swipeGesture.direction = .left
         } else if UIDevice.current.orientation.isPortrait {
             swipeText.text = "Swipe up to share"
-            swipeGesture.direction = .up
         }
     }
     
     // Render image
-        func renderPicture() {
-            let render = UIGraphicsImageRenderer(size: bigGridSquare.bounds.size)
-            let renderingImage = render.image {
-                (ctx) in
-                bigGridSquare.drawHierarchy(in: bigGridSquare.bounds, afterScreenUpdates: true)
-            }
-            let activityController = UIActivityViewController (activityItems: [renderingImage], applicationActivities: nil)
-            present(activityController, animated: true)
-            activityController.completionWithItemsHandler = { _ , _ , _, _ in
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.bigGridSquare.transform = .identity
-                })
-            }
+    func renderPicture() {
+        let render = UIGraphicsImageRenderer(size: bigGridSquare.bounds.size)
+        let renderingImage = render.image {
+            (ctx) in
+            bigGridSquare.drawHierarchy(in: bigGridSquare.bounds, afterScreenUpdates: true)
         }
-    
-    // Animation of Swipe with orientation constrains
-        func animateSwipe() {
-            if UIDevice.current.orientation.isLandscape {
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.bigGridSquare.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
-                })
-            } else {
-                UIView.animate(withDuration: 0.2, animations: {
-                    self.bigGridSquare.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
-                })
-            }
-        }
-    
-    // Check if the image contents something
-    func isImageEmpty() -> Bool {
-        if sender.image(for: .normal) == UIImage(named:"Plus") {
-           return true
-        } else {
-            return false
+        let activityController = UIActivityViewController (activityItems: [renderingImage], applicationActivities: nil)
+        present(activityController, animated: true)
+        activityController.completionWithItemsHandler = { _ , _ , _, _ in
+            UIView.animate(withDuration: 0.2, animations: {
+                self.bigGridSquare.transform = .identity
+            })
         }
     }
     
+    // Animation of Swipe with orientation constrains
+    func animateSwipe() {
+        if UIDevice.current.orientation.isLandscape {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.bigGridSquare.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)
+            })
+        } else {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.bigGridSquare.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)
+            })
+        }
+    }
+    
+    // Check if the image contents something
+    func isImageEmpty() -> Bool {
+        if tappedButtonQty == 3 && (button2.isHidden || button4.isHidden) {
+            return false
+        } else if tappedButtonQty == 4 {
+            return false
+        } else {
+            return true
+        }
+        
+        // Quelle est le layout affihché
+        // Est-ce que tous les bouton ont une image setté
+        // Return true ou false
+        
+//        if sender.image(for: .normal) == UIImage(named:"Plus") {
+//            return true
+//        } else {
+//            return false
+//        }
+    }
+    
     // annim and export picture
-    @objc func sharePicture(_ sender: UISwipeGestureRecognizer){
+    @objc func sharePicture(_ gesture: UIGestureRecognizer) {
         if isImageEmpty() {
             showNotifAlert()
-        }else{
-         //animateSwipe()
-         //renderPicture()
-        print("L'action est faite")
+        } else {
+            if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+                if (swipeGesture.direction == .up && UIDevice.current.orientation.isPortrait) || (swipeGesture.direction == .left && UIDevice.current.orientation.isLandscape) {
+                    animateSwipe()
+                    renderPicture()
+                }
+            }
         }
     }
     
@@ -151,6 +173,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {action in
             print("tapped OK")
         }))
+        present(alert, animated: true, completion: nil)
     }
     
 }
