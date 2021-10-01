@@ -22,13 +22,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     // Initialisation of swipeGesture
     private var sender: UIButton!
-    private var tappedButtonQty = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         buttonTemplate2.isSelected = true
+        
+        
         // Make view recognizing gesture
         let swipeUP = UISwipeGestureRecognizer(target: self, action: #selector(sharePicture(_:)))
         swipeUP.direction = .up
@@ -37,7 +37,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(sharePicture(_:)))
         swipeLeft.direction = .left
         view.addGestureRecognizer(swipeLeft)
-        
+    
     }
     
     
@@ -51,10 +51,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     //import the image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
-        sender.setImage(image, for: .normal)
-        button1.imageView?.contentMode = .scaleAspectFill
-        button3.imageView?.contentMode = .scaleAspectFill
-        tappedButtonQty+=1
+        
+        sender.setImage(image, for: .selected)
+        sender.imageView?.contentMode = .scaleAspectFill
+        sender.isSelected = true
         dismiss(animated: true)
     }
     
@@ -133,29 +133,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
     
     // Check if the image contents something
-    func isImageEmpty() -> Bool {
-        if tappedButtonQty == 3 && (button2.isHidden || button4.isHidden) {
-            return false
-        } else if tappedButtonQty == 4 {
-            return false
-        } else {
-            return true
+    func isValidLayoutImage() -> Bool {
+        if buttonTemplate1.isSelected && button1.isSelected && button3.isSelected && button4.isSelected || buttonTemplate2.isSelected && button1.isSelected && button2.isSelected && button3.isSelected || buttonTemplate3.isSelected && button1.isSelected && button2.isSelected && button3.isSelected && button4.isSelected {
+                return true
         }
         
-        // Quelle est le layout affihché
-        // Est-ce que tous les bouton ont une image setté
-        // Return true ou false
-        
-//        if sender.image(for: .normal) == UIImage(named:"Plus") {
-//            return true
-//        } else {
-//            return false
-//        }
+        return false
     }
     
-    // annim and export picture
+    // anim and export picture
     @objc func sharePicture(_ gesture: UIGestureRecognizer) {
-        if isImageEmpty() {
+        
+        if !isValidLayoutImage() {
             showNotifAlert()
         } else {
             if let swipeGesture = gesture as? UISwipeGestureRecognizer {
