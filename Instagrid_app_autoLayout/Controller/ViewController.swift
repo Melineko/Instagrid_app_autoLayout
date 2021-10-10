@@ -48,6 +48,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         openImagePicker()
     }
     
+    private func openImagePicker() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present (picker, animated: true)
+    }
+    
     //import the image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
@@ -56,13 +63,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         sender.imageView?.contentMode = .scaleAspectFill
         sender.isSelected = true
         dismiss(animated: true)
-    }
-    
-    private func openImagePicker() {
-        let picker = UIImagePickerController()
-        picker.allowsEditing = true
-        picker.delegate = self
-        present (picker, animated: true)
     }
     
     func resetTemplateButtons(){
