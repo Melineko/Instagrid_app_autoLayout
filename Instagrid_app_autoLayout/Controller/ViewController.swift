@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
-    //elements of the view
+    // Elements of the view
     @IBOutlet weak var bigGridSquare: UIView!
     @IBOutlet weak var buttonTemplate1: UIButton!
     @IBOutlet weak var buttonTemplate2: UIButton!
@@ -42,7 +42,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     
     
-    //open the Image picker
+    // Open the Image picker
     @IBAction func buttonImgPicker(_ sender: UIButton) {
         self.sender = sender
         openImagePicker()
@@ -55,7 +55,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         present (picker, animated: true)
     }
     
-    //import the image
+    // Import the image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
         
